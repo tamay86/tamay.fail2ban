@@ -1,0 +1,18 @@
+---
+# tasks file for tamay.fail2ban
+
+- name: "Ensure epel-release is installed"
+  package:
+    state: present
+    name: epel-release
+
+- name: "Install fail2ban"
+  package:
+    state: present
+    name: fail2ban
+
+- name: "Start and enable fail2ban service"
+  service:
+    name: fail2ban
+    state: started
+    enabled: yes
